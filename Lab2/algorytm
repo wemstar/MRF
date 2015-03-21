@@ -1,0 +1,10 @@
+x=sqrt(-2 ln(u1))*cos(2*pi u1)
+#normalna
+x=sqrt(-2 ln(u1))*cos(2*pi u1)
+y=sqrt(-2 ln(u1))*sin(2*pi u1)
+#polarna
+zeta=2*u1-1
+teta=2*u2-1
+s=teta**2 + zeta**2
+x=zeta * sqrt(-2ln(s)/s)
+y=zeta * sqrt(-2ln(s)/s)
