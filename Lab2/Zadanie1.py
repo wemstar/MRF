@@ -1,8 +1,9 @@
 __author__ = 'wemstar'
 import numpy as np
+from numba import jit
 
 
-
+@jit
 def wyliczPi(n=1000000):
         prawdziwe=0;
         for x in range(n):
@@ -15,10 +16,9 @@ def err(dane):
         sigma=np.sqrt(np.sum((dane-mean)**2.0))
         return sigma
 def proby(p=10,n=1000000):
-        z=[]
+        z=np.zeros(n);
         for x in range(p):
-                z.append(wyliczPi(n))
-        z=np.array(z)
+                z[x]=(wyliczPi(n))
         print("Wartosc pi= {0} +- {1}".format(np.mean(z),err(z)))
 proby(10,10**6)
 proby(10,10**8)
