@@ -31,9 +31,7 @@ fig = plt.figure()
 ax = fig.add_subplot(111, aspect='equal')
 
 ax.scatter(x[0,:],x[1,:])
-ax.add_artist(Ellipse(xy=[c,f], width=own[0], height=own[1], angle=math.atan2(own1[0,1],own1[0,0])/(2.0*math.pi)*360.0))
+ax.add_artist(Ellipse(xy=[c,f], width=own[0]*3.0, height=own[1]*7.0, angle=25.0))
 
-print(z)
-print(p)
-print(own,own1)
+
 plt.show()
