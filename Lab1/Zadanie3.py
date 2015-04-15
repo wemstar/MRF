@@ -3,6 +3,7 @@ __author__ = 'wemstar'
 import pylab as P
 import math
 import numpy as np
+import scipy.stats as stats
 def funkcjaA(data):
     return 2.0 * data - 1.0
 
@@ -43,6 +44,19 @@ histogramB = P.sort(funkcjaB(data))
 histogramC = P.sort(funkcjaC(data))
 histogramD = P.sort(funkcjaD(data))
 histogramE = P.sort(funkcjaE(data))
+print("Kwantyle q=0.05")
+print(np.percentile(histogramA,0.05))
+print(np.percentile(histogramB,0.05))
+print(np.percentile(histogramC,0.05))
+print(np.percentile(histogramD,0.05))
+print(np.percentile(histogramE,0.05))
+
+print("Kwantyle q=0.01")
+print(np.percentile(histogramA,0.01))
+print(np.percentile(histogramB,0.01))
+print(np.percentile(histogramC,0.01))
+print(np.percentile(histogramD,0.01))
+print(np.percentile(histogramE,0.01))
 
 fig, axes = P.subplots(nrows=2, ncols=3, figsize=(6, 6))
 

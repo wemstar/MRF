@@ -51,9 +51,10 @@ flatPdf = vonNeuman(flat, 1000, [0.0, 1.0], [0.0, 1.0])
 expPdf = vonNeuman(ekspotential, 10000, [0.0, 6.0], [0.0, 1.0])
 cPdf = vonNeuman(cpdf, 10000, [0.0, 6.0], [0.0, 1.0])
 dPdf = vonNeuman(dpdf, 10000, [0.0, 6.0], [0.0, 1.0])
-for pdf in [flatPdf,expPdf,cPdf,dPdf]:
+for pdf,ops in zip([flatPdf,expPdf,cPdf,dPdf],["Rozkład A","Rozkład B","Rozkład C","Rozkład D"]):
+    print(ops)
     for funkcje,opis in zip([np.mean,np.std,stats.skew,stats.kurtosis],["Średnia","Odchylenie standarowe","Skośność","Kurtoza"]):
-        print(opis)
+        print(opis,end=' ')
         jack = jackKnife(pdf, funkcje)
         boot=bootStrap(pdf,funkcje)
         print("Wartośc dla JackKnife {:f} niepewność {:f} wartośc dla BootStrap {:f} niepewnośc {:f}".format(jack[0],jack[1],boot[0],boot[1]))
