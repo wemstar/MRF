@@ -6,7 +6,7 @@ import scipy.stats as stats
 
 
 def dt(S, X, r, sigma, T, wsp):
-    return (math.log(S / X) + (r + wsp * (sigma ** 2.0 / 2.0) * T)) / (sigma * math.sqrt(T))
+    return (math.log(S / X) + (r + wsp * ((sigma ** 2.0) / 2.0) * T)) / (sigma * math.sqrt(T))
 
 
 def priceBuyOption(S, X, r, sigma, T):
