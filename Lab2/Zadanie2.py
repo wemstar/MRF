@@ -5,16 +5,15 @@ import random
 import pylab as P
 
 def rozklad(x):
-        return 2.0/math.pi*(math.sqrt(1.0-x**2.0))
+        return 2./math.pi*(math.sqrt(1.0-x**2.0))
 
 def generateValues(n=10**5):
-        prawdziwe=np.zeros([n, 2])
+        prawdziwe=[]
         for b in range(n):
                 x=(random.random()-0.5)*2.0
-                y=(random.random())*2.0/math.pi
+                y=(random.random())/(2./math.pi)
                 if y <= rozklad(x):
-                        prawdziwe[b,0]=x
-                        prawdziwe[b,1]=y
+                        prawdziwe.append([x,y])
         return prawdziwe
 
 

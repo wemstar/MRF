@@ -2,6 +2,7 @@ import numpy as np
 import random
 import math
 import scipy.stats as stats
+#-*- coding: utf-8 -*-
 
 
 def vonNeuman(pdf, n, xrange, yrange):
@@ -51,13 +52,13 @@ flatPdf = vonNeuman(flat, 1000, [0.0, 1.0], [0.0, 1.0])
 expPdf = vonNeuman(ekspotential, 10000, [0.0, 6.0], [0.0, 1.0])
 cPdf = vonNeuman(cpdf, 10000, [0.0, 6.0], [0.0, 1.0])
 dPdf = vonNeuman(dpdf, 10000, [0.0, 6.0], [0.0, 1.0])
-for pdf,ops in zip([flatPdf,expPdf,cPdf,dPdf],["Rozkład A","Rozkład B","Rozkład C","Rozkład D"]):
+for pdf,ops in zip([flatPdf,expPdf,cPdf,dPdf],["Rozkad A","Rozkad B","Rozkad C","Rozkad D"]):
     print(ops)
-    for funkcje,opis in zip([np.mean,np.std,stats.skew,stats.kurtosis],["Średnia","Odchylenie standarowe","Skośność","Kurtoza"]):
-        print(opis,end=' ')
+    for funkcje,opis in zip([np.mean,np.std,stats.skew,stats.kurtosis],["srednia","Odchylenie standarowe","Skonosc","Kurtoza"]):
+        print(opis)
         jack = jackKnife(pdf, funkcje)
         boot=bootStrap(pdf,funkcje)
-        print("Wartośc dla JackKnife {:f} niepewność {:f} wartośc dla BootStrap {:f} niepewnośc {:f}".format(jack[0],jack[1],boot[0],boot[1]))
+        print("Wartosc dla JackKnife {:f} niepewno {:f} wartoc dla BootStrap {:f} niepewnosc {:f}".format(jack[0],jack[1],boot[0],boot[1]))
 
 
 
