@@ -41,7 +41,7 @@ def monteOption(S, K, r, sigma, T, funkcjaCeny, n=10000000):
     return np.exp(-r * T) * np.mean(B)
 
 
-print(priceBuyOption(98.0, 100.0, 0.05, 0.2, 1.))
-print(monteOption(98.0, 100.0, 0.05, 0.2, 1., funkcjaCenyKupno))
-print(priceSellOption(98.0, 100.0, 0.05, 0.2, 1.))
-print(monteOption(98.0, 100.0, 0.05, 0.2, 1., funkcjaCenySprzedaz))
+print(priceBuyOption(100.0, 100.0, 0.0, 0.2, 0.5))
+print(monteOption(100.0, 100.0, 0.0, 0.2, 0.5, funkcjaCenyKupno))
+print(priceSellOption(100.0, 100.0, 0.0, 0.2, 0.5))
+print(monteOption(100.0, 100.0, 0.0, 0.2, 0.5, funkcjaCenySprzedaz))

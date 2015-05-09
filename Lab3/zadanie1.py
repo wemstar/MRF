@@ -4,22 +4,21 @@ import scipy.stats
 from scipy.stats import cauchy
 import numpy as np
 
-n = 10000
+n = 10000000
 wartosci = []
 srednia = []
 odchylenie = []
 
-wartosciCauchy = []
-sredniaCauchy = []
+wartosciCauchy = np.random.standard_cauchy(n)
+sredniaCauchy=np.cumsum(wartosciCauchy)/np.arange(1,n+1)
 odchylenieCauchy = []
 
-for x in range(n):
-    wartosci.append(np.random.normal())
-    srednia.append(np.mean(P.array(wartosci)))
-    odchylenie.append(np.std(P.array(wartosci)))
-    wartosciCauchy.append(cauchy.rvs())
-    sredniaCauchy.append(np.mean(P.array(wartosciCauchy)))
-    odchylenieCauchy.append(np.std(P.array(wartosciCauchy)))
+"""for x in range(n):
+    #wartosci.append(np.random.normal())
+    #srednia.append(np.mean(P.array(wartosci)))
+    #odchylenie.append(np.std(P.array(wartosci)))
+    sredniaCauchy.append(np.mean(P.array(wartosciCauchy[:x])))
+    odchylenieCauchy.append(np.std(P.array(wartosciCauchy[:x])))"""
 
 fix, ax = P.subplots(4, 1)
 ax[0].plot(srednia)
